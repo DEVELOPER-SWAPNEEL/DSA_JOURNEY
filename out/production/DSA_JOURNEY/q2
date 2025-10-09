@@ -1,0 +1,212 @@
+/*
+learn-icon
+Practice Arrays
+View full syllabus
+26% Completed
+Search an element in an array
+Find maximum in an Array
+Take discount or Not
+Cost of Groceries
+MIN To MAX
+Running Comparison
+Largest and Second Largest
+Difficulty Rating Order
+Premium Problems
+Pro
+Difficulty:  928
+00:19:35
+Prev
+Next
+Switch to AI Tutor Mode
+NEW
+Largest and Second Largest
+You are given an array 
+A
+A of 
+N
+N integers.
+Find the maximum sum of two distinct integers in the array.
+Note: It is guaranteed that there exist at least two distinct integers in the array.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, denoting the number of test cases.
+Each test case consists of multiple lines of input.
+The first line of each test case contains single integer 
+N
+N — the size of the array.
+The next line contains 
+N
+N space-separated integers, denoting the array 
+A
+A.
+Output Format
+For each test case, output on a new line, the maximum sum of two distinct integers in the array.
+Constraints
+1
+≤
+T
+≤
+1000
+1≤T≤1000
+2
+≤
+N
+≤
+10
+5
+2≤N≤10 
+5
+ 
+1
+≤
+A
+i
+≤
+1000
+1≤A 
+i
+​	
+ ≤1000
+The sum of 
+N
+N over all test cases does not exceed 
+2
+⋅
+10
+5
+2⋅10 
+5
+ .
+Sample 1:
+Input
+Output
+4
+3
+4 1 6
+7
+3 7 2 1 1 5 3
+5
+8 2 9 4 9
+2
+1 2
+10
+12
+17
+3
+Explanation:
+Test case 
+1
+1: The maximum sum of two distinct elements is 
+4
++
+6
+=
+10
+4+6=10 .
+
+Test case 
+2
+2: The maximum sum of two distinct elements is 
+7
++
+5
+=
+12
+7+5=12.
+
+Test case 
+3
+3: The maximum sum of two distinct elements is 
+8
++
+9
+=
+17
+8+9=17.
+
+Test case 
+4
+4: The maximum sum of two distinct elements is 
+1
++
+2
+=
+3
+1+2=3.
+
+Did you like the problem?
+197 users found this helpful
+
+ 
+
+Sample Input
+4
+3
+4 1 6
+7
+3 7 2 1 1 5 3
+5
+8 2 9 4 9
+2
+1 2
+Your Output
+10
+12
+17
+3
+You got it right!
+Sub-Task	Task #	Result
+(time)
+1	0	Correct
+(0.08)
+1	1	Correct
+(0.56)
+1	2	Correct
+(0.52)
+1	3	Correct
+(0.57)
+Subtask Score: 100%	Result - Correct
+Total Score = 100%
+Visualize Code
+Run
+Submit
+
+Next
+*/
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+
+        while (t-- > 0) {
+            int n = scanner.nextInt();
+            int[] a = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                a[i] = scanner.nextInt();
+            }
+            int firstMax = Integer.MIN_VALUE;
+            int secondMax = Integer.MIN_VALUE;
+
+            for (int i = 0; i < n; i++) {
+                if (a[i] > firstMax) {
+                    secondMax = firstMax;
+                    firstMax = a[i];
+                } else if (a[i] > secondMax && a[i] != firstMax) {
+                    secondMax = a[i];
+                }
+            }
+
+            int maxSum = firstMax + secondMax;
+            System.out.println(maxSum);
+        }
+
+        scanner.close();
+    }
+}
