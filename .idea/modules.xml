@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DSA_JOURNEY.iml" filepath="$PROJECT_DIR$/DSA_JOURNEY.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bit_operators/bit_operators.iml" filepath="$PROJECT_DIR$/bit_operators/bit_operators.iml" />
     </modules>
   </component>
 </project>
